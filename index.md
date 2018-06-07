@@ -145,10 +145,16 @@ socket.on('site', ({ siteKey, data }) => {
   // Do something with the new site configuration
 })
 
-// When a switch is pressed, you'll receive a 'peripheralInput' message.
+// When a switch is pressed or a motion sensor detects movement, you'll receive a 'peripheralInput' message.
 
 socket.on('peripheralInput', ({ siteKey, data }) => {
   // Do something with the peripheral input data
+})
+
+// When a sensor emits data, you'll receive a 'sensorData' message.
+
+socket.on('sensorData', ({ siteKey, data }) => {
+  // Do something with the sensor data
 })
 
 // The following messages should be emitted only after receiving a 'siteKeyFound' message.
